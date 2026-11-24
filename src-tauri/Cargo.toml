@@ -1,0 +1,21 @@
+[package]
+name = "zoomcap-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+screencapturekit = "0.3"
+
+# TODO: Windows Graphics Capture (WGC) backend
+# [target.'cfg(target_os = "windows")'.dependencies]
+# windows = { version = "0.58", features = [
+#     "Graphics_Capture",
+#     "Graphics_DirectX_Direct3D11",
+#     "Win32_Graphics_Direct3D11",
+#     "Win32_System_WinRT_Graphics_Capture",
+# ] }
